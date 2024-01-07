@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Voice Assistant Web Interface</h1>
+        <button onclick="startAssistant()">Start Assistant</button>
+    </div>
+
+    <script>
+        function startAssistant() {
+            // You can add JavaScript code here to trigger your voice assistant
+            // You may want to use AJAX to communicate with your server where the voice assistant script is running
+            // Example: Use fetch() to send a request to your server
+            fetch('/start-assistant')  // Replace with the actual endpoint on your server
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error(error));
+        }
+    </script>
+</body>
+</html>

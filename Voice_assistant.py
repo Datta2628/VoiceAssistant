@@ -42,3 +42,51 @@ def takeCommand():
         print("Say that again please...")
         return "None"
     return query
+
+
+if __name__ == "__main__":
+    wishMe()
+    while True:
+        query = takeCommand().lower()
+
+        if 'wikipedia' in query:
+            speak('Searching Wikipedia...')
+            query = query.replace("wikipedia", "")
+            results = wikipedia.summary(query, sentences=2)
+            speak("According to Wikipedia")
+            print(results)
+            speak(results)
+
+        elif 'open youtube' in query:
+            webbrowser.open("https://www.youtube.com")
+
+        elif 'open google' in query:
+            webbrowser.open("https://www.google.com")
+
+        elif 'what is the time' in query:
+            strTime = datetime.datetime.now().strftime("%H:%M:%S")
+            speak(f"Sir, the time is {strTime}")
+
+        elif 'open code of numpy' in query:
+            codePath = r"C:\\Users\\yadav\\Documents\\Python\\Numpy.exe"
+            os.startfile(codePath)
+
+        elif 'open mail' in query:
+            mail_url = "https://mail.google.com"  # Replace with the URL of your email provider
+            webbrowser.open(mail_url)
+            speak("Opening your mail in the browser")
+
+        elif 'open teams' in query:
+            teams_url = "https://teams.microsoft.com"
+            webbrowser.open(teams_url)
+            speak("Opening Microsoft Teams")
+
+        elif 'open eviden' in query:
+            eviden_url = "https://www.eviden.com"
+            webbrowser.open(eviden_url)
+            speak("Opening Eviden.com")
+
+        elif 'open atos location' in query:
+            pune_atos_url = "https://www.example.com/pune/atos-location"
+            webbrowser.open(pune_atos_url)
+            speak("Opening Pune Atos Location")
